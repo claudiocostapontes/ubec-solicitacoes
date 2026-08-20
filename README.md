@@ -1,4 +1,4 @@
-# UBEC - Sistema de Solicitações de Documentos
+# UBEC - União Brasileira de Educação Católica
 
 Case técnico para processo seletivo - Desenvolvimento de Sistemas.
 
