@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UbecSolicitacoes")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e298bc0d5640e02ca1d0079ebeca8a552a297bd4")]
 [assembly: System.Reflection.AssemblyProductAttribute("UbecSolicitacoes")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UbecSolicitacoes")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -122,3 +122,8 @@ C:\case-tecnico-ubec\UbecSolicitacoes\obj\Debug\net10.0\refint\UbecSolicitacoes.
 C:\case-tecnico-ubec\UbecSolicitacoes\obj\Debug\net10.0\UbecSolicitacoes.pdb
 C:\case-tecnico-ubec\UbecSolicitacoes\obj\Debug\net10.0\UbecSolicitacoes.genruntimeconfig.cache
 C:\case-tecnico-ubec\UbecSolicitacoes\obj\Debug\net10.0\ref\UbecSolicitacoes.dll
+C:\case-tecnico-ubec\UbecSolicitacoes\bin\Debug\net10.0\package-lock.json
+C:\case-tecnico-ubec\UbecSolicitacoes\bin\Debug\net10.0\package.json
+C:\case-tecnico-ubec\UbecSolicitacoes\bin\Debug\net10.0\public\manifest.json
+C:\case-tecnico-ubec\UbecSolicitacoes\bin\Debug\net10.0\tsconfig.json
+C:\case-tecnico-ubec\UbecSolicitacoes\obj\Debug\net10.0\UbecSolicitacoes.sourcelink.json
