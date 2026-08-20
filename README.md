@@ -1,46 +1,70 @@
-# Getting Started with Create React App
+# UBEC - Sistema de Solicitações de Documentos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Case técnico para processo seletivo - Desenvolvimento de Sistemas.
 
-## Available Scripts
+## Como rodar o projeto do zero
 
-In the project directory, you can run:
+### 1. Backend (.NET + MySQL)
 
-### `npm start`
+**Pré-requisitos:**
+- .NET SDK 8.0 ou 9.0 instalado
+- MySQL 8.0 instalado e rodando (serviço iniciado)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Configure a string de conexão no arquivo appsettings.json:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+"DefaultConnection": "server=localhost;port=3306;database=ubec_solicitacoes;user=root;password=root"
 
-### `npm test`
+Crie o banco de dados no MySQL:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+CREATE DATABASE ubec_solicitacoes
 
-### `npm run build`
+Execute as migrations para criar as tabelas e popular os dados:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+dotnet ef migrations add InitialCreate
+dotnet ef database update
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Rode a API:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+dotnet run
 
-### `npm run eject`
+A API estará disponível em: http://localhost:5103
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Frontend (React + TypeScript)
+Pré-requisitos:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Node.js 18+ instalado
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Passos:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Em outro PowerShell, vá para a pasta do frontend:
 
-## Learn More
+cd C:\case-tecnico-ubec\frontend
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Instale as dependências:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+npm install
+
+Rode o projeto:
+
+npm start
+
+O frontend estará disponível em: http://localhost:3000
+
+Decisões técnicas:
+
+Service Layer: Separei as regras de negócio (RN01 a RN04) em uma camada de serviço, deixando o controller apenas como roteador. Isso facilita testes e manutenção.
+
+Entity Framework + MySQL: Utilizei ORM para agilizar o desenvolvimento e garantir consistência com o banco de dados relacional.
+
+DTOs (Data Transfer Objects): Criei DTOs para separar a camada de domínio da camada de API, expondo apenas os dados necessários ao frontend.
+
+CORS habilitado: Configurei o CORS para permitir que o frontend (porta 3000) se comunique com o backend (porta 5103) sem bloqueios de segurança.
+
+O que ficou de fora ou está frágil nesta versão
+Testes unitários (não implementados, mas seria o próximo passo)
+
+Paginação na listagem de solicitações
+
+Design responsivo no frontend (foco foi funcionalidade)
+
+Tratamento global de erros no backend (atualmente é feito caso a caso)
